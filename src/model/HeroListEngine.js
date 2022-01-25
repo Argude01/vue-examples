@@ -1,6 +1,9 @@
 export class HeroListEngine {
-    constructor() {
+    constructor(heroes) {
         this.heroes = [];
+        heroes.forEach(hero => {
+            this.addHero(hero)
+        });
     }
 
     addHero(newHero) {

@@ -10,10 +10,7 @@
 </template>
 
 <script>
-
-import { HeroEngine } from '../../model/HeroEngine';
-
-let hm = new HeroEngine('Los increibles', 'Familia de superheroes');
+    import { HeroEngine } from '../../model/HeroEngine';
 
     export default {
         name: 'Hero',
@@ -28,10 +25,8 @@ let hm = new HeroEngine('Los increibles', 'Familia de superheroes');
                 addHero() {
                     this.newHero = new HeroEngine(this.newHeroName, this.newHeroDescription);
                     this.$emit("add-hero", this.newHero);
-                    this.newHero;
-                    console.log(hm);
-                    console.log(this.newHeroName);
-                    console.log(this.newHeroDescription)
+                    this.newHeroName = '';
+                    this.newHeroDescription = '';
             }
         },
         emits: ["add-hero"],
