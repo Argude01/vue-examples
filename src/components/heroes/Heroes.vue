@@ -1,6 +1,7 @@
 <template>
 <div class="container">
    <Hero  @add-hero="addHero($event)"></Hero>
+   <br>
    <HeroList :heroList="heroes"></HeroList>
 </div>
 </template>
