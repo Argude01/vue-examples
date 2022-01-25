@@ -3,23 +3,35 @@
         <div class="form-group">
             <label for="">Hero Name</label>
             <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" v-model="newHeroName">
+            <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="" v-model="newHeroDescription">
         <button type="button" class="btn btn-primary mt-2" @click="addHero()" :disabled="newHeroName === ''">Add</button>
         </div>
     </div>
 </template>
 
 <script>
+
+import { HeroEngine } from '../../model/HeroEngine';
+
+let hm = new HeroEngine('Los increibles', 'Familia de superheroes');
+
     export default {
         name: 'Hero',
         data() {
             return {
-                newHeroName: '',
+                newHeroName: this.newHeroName,
+                newHeroDescription: this.newHeroDescription,
+                newHero: {},
             }
         },
         methods: {
                 addHero() {
-                    this.$emit("add-hero", this.newHeroName);
-                    this.newHeroName;
+                    this.newHero = new HeroEngine(this.newHeroName, this.newHeroDescription);
+                    this.$emit("add-hero", this.newHero);
+                    this.newHero;
+                    console.log(hm);
+                    console.log(this.newHeroName);
+                    console.log(this.newHeroDescription)
             }
         },
         emits: ["add-hero"],

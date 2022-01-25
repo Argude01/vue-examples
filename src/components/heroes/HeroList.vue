@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="list-group mt-4">
-          <li class="list-group-item" v-for="(hero, index) in heroList"  :key="index">{{hero}}</li>
+          <li class="list-group-item" v-for="(hero, index) in heroList"  :key="index">{{hero.name}}, {{ hero.description}}</li>
         </ul>
     </div>
 </template>

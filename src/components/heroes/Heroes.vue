@@ -8,13 +8,16 @@
 <script>
 import Hero from './Hero.vue';
 import HeroList from './HeroList.vue';
+import { HeroListEngine } from '../../model/HeroListEngine';
+
+let hlm = new HeroListEngine();
 
 export default {
   components: { Hero, HeroList },
     name: 'Heroes',
     data() {
         return {
-            heroes: ['Batman', 'Superman', 'Gatuvela'],
+            heroes: hlm.getHeroes(),
         }
     },
     methods: {
